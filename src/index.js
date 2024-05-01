@@ -1,3 +1,4 @@
-import './style.css';
+import './style.css'
+import { loadPage } from './pages/webpage.js'
 
-alert('WORKING')
+loadPage()
