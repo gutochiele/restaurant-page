@@ -5,9 +5,6 @@ import { contactTab } from "./contact"
 const header = document.querySelector('header')
 const nav = document.querySelector('nav')
 const btns = document.querySelectorAll('button')
-// const homeBtn = document.getElementById('home')
-// const menuBtn = document.getElementById('menu')
-// const contactBtn = document.getElementById('contact')
 
 function loadPage(){
 
@@ -16,6 +13,7 @@ function loadPage(){
         let h2Content = document.createTextNode("Piccola Osteria Vicentina")
         h2.appendChild(h2Content)
         header.insertBefore(h2, nav)
+
     }
     addTittle()
 
@@ -28,10 +26,17 @@ function loadPage(){
     }
     addFooter()
 
+        homeTab()
+        menuTab()
+        contactTab()
+
     function openTab(e, btnId){
 
          let i, tabcontent, tablinks;
          btnId = this.id
+         let homePage = document.getElementById('homepg')
+         let menuPage = document.getElementById('menupg')
+         let contactPage = document.getElementById('contactpg')
 
         // Get all elements with class="tabcontent" and hide them
         tabcontent = document.getElementsByClassName("tabcontent");
@@ -46,21 +51,21 @@ function loadPage(){
         }
 
         // Show the current tab, and add an "active" class to the button that opened the tab
-        // document.getElementById(btnId).style.display = "block";
         e.currentTarget.className += " active";
 
-        if(btnId == 'menu'){
-            menuTab()
-        } else if(btnId == 'contact'){
-            contactTab()
-        } else if (btnId == 'home'){
-            homeTab();
+        if(btnId == 'home'){
+            homePage.style.display = "block";
+        } else if(btnId == 'menu'){
+            menuPage.style.display = "block";
+        } else if (btnId == 'contact'){
+            contactPage.style.display = "block";
         }
+        console.log(e, btnId)
     }
 
     btns.forEach(btn => btn.classList.add('tablinks'));
     btns.forEach(btn => btn.addEventListener('click', openTab))
-    
+
 }
 
 export { loadPage }

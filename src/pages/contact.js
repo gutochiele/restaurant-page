@@ -6,6 +6,7 @@ function contactTab(){
     let h2Content = document.createTextNode("contactTab")
     h2.appendChild(h2Content)
     h2.classList.add('tabcontent')
+    h2.setAttribute('id', 'contactpg')
     content.appendChild(h2)
 }
 

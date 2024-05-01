@@ -8,6 +8,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      filename: 'index.bundle.html',
     }),
   ],
   module: {
@@ -19,7 +20,8 @@ module.exports = {
     ],
   },
   output: {
-    filename: 'main.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
 };

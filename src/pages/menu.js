@@ -6,6 +6,7 @@ function menuTab(){
     let h2Content = document.createTextNode("menuTab")
     h2.appendChild(h2Content)
     h2.classList.add('tabcontent')
+    h2.setAttribute('id', 'menupg')
     content.appendChild(h2)
 }
 
