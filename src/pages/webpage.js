@@ -2,6 +2,7 @@ import { menuTab } from "./menu"
 import { homeTab } from "./home"
 import { contactTab } from "./contact"
 
+
 const header = document.querySelector('header')
 const nav = document.querySelector('nav')
 const btns = document.querySelectorAll('button')
@@ -9,14 +10,12 @@ const btns = document.querySelectorAll('button')
 function loadPage(){
 
     function addTittle(){
-        let h2 = document.createElement('h2')
-        let h2Content = document.createTextNode("Piccola Osteria Vicentina")
-        h2.appendChild(h2Content)
-        header.insertBefore(h2, nav)
-
+        let h1 = document.createElement('h1')
+        let h1Content = document.createTextNode("La Osteria Vicentina")
+        h1.appendChild(h1Content)
+        header.insertBefore(h1, nav)
     }
-    addTittle()
-
+    
     function addFooter(){
         let footer = document.createElement('div')
         footer.classList.add('footer')
@@ -24,11 +23,6 @@ function loadPage(){
         footer.appendChild(footerText)
         document.body.appendChild(footer)
     }
-    addFooter()
-
-        homeTab()
-        menuTab()
-        contactTab()
 
     function openTab(e, btnId){
 
@@ -60,12 +54,16 @@ function loadPage(){
         } else if (btnId == 'contact'){
             contactPage.style.display = "block";
         }
-        console.log(e, btnId)
     }
 
     btns.forEach(btn => btn.classList.add('tablinks'));
     btns.forEach(btn => btn.addEventListener('click', openTab))
 
+    addTittle()
+    addFooter()
+    homeTab()
+    menuTab()
+    contactTab()
 }
 
 export { loadPage }
