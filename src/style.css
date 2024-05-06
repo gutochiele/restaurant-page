@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Roboto+Slab:wght@100..900&display=swap');
 
 html {
     min-height: 100%;
     display: flex;
     flex-direction: column;
     font-family: Cinzel, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    /* background-image: url("./img/sarda-bamberg-MZWRiMyPLAc-unsplash.jpg");
-    background-position: center;
+    background-image: url("./img/siyuan-g_V2rt6iG7A-unsplash.jpg");
+    background-position: top;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover; */
+    background-size: cover;
 }
 
 h1 { 
@@ -37,17 +37,25 @@ body{
 
 .content{
     flex-grow: 1;
-    min-width: 100vw
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
 }
 
 .tabcontent {
+    padding: 15px;
     animation: fadeEffect 1s;
     display: none;
+    font-family: "Roboto Slab", serif;
+    background-color: #00000076;
+    color: #fcfae2;
   }
+
 
 #homepg{
     display: block;
 }
+
   
 /* Go from zero to full opacity */
 @keyframes fadeEffect {
@@ -76,6 +84,7 @@ button {
     display: inline-block;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    flex-grow: 1;
     /* border-radius: 12px; */
 }
 
